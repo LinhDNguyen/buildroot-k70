@@ -147,6 +147,8 @@ choice
 	help
 	  Specific CPU variant to use
 
+config BR_arm_cortexm
+	bool "Cortex_M"
 config BR2_generic_arm
 	bool "generic_arm"
 config BR2_arm7tdmi
@@ -206,6 +208,7 @@ config BR2_ARM_TYPE
 	default ARM_IWMMXT	if BR2_iwmmxt
 	default ARM_CORTEXA8	if BR2_cortex_a8
 	default ARM_CORTEXA9	if BR2_cortex_a9
+	default ARM_CORTEXM		if BR_arm_cortexm
 
 choice
 	prompt "Target ABI"
@@ -819,6 +822,7 @@ config BR2_GCC_TARGET_ARCH
 	default 68030		if BR2_m68k_68030
 	default 68040		if BR2_m68k_68040
 	default 68060		if BR2_m68k_68060
+	default armv7-m		if BR_arm_cortexm
 
 config BR2_GCC_TARGET_ABI
 	string
@@ -846,3 +850,4 @@ config BR2_GCC_TARGET_CPU
 	default sparchfleonv8	if BR2_sparc_sparchfleonv8
 	default sparcsfleon	if BR2_sparc_sparcsfleon
 	default sparcsfleonv8	if BR2_sparc_sparcsfleonv8
+	default cortex-m4	if BR_arm_cortexm
