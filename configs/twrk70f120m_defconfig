@@ -1,6 +1,6 @@
 #
 # Automatically generated make config: don't edit
-# Buildroot 2012.05-git-00305-ga2be2e6-dirty Configuration
+# Buildroot 2012.05-git-00307-ge73abec-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_arm=y
@@ -48,7 +48,6 @@ BR2_ARCH="arm"
 BR2_ENDIAN="LITTLE"
 BR2_GCC_TARGET_ARCH="armv7-m"
 BR2_GCC_TARGET_ABI="aapcs-linux"
-BR2_GCC_TARGET_CPU="cortex-m4"
 
 #
 # Build options
@@ -69,7 +68,7 @@ BR2_ZCAT="gzip -d -c"
 BR2_BZCAT="bzcat"
 BR2_XZCAT="xzcat"
 BR2_TAR_OPTIONS=""
-BR2_DL_DIR="$(TOPDIR)/dl"
+BR2_DL_DIR="$(TOPDIR)/../srcpkgs"
 BR2_HOST_DIR="$(BASE_DIR)/host"
 
 #
@@ -179,7 +178,7 @@ BR2_PACKAGE_BUSYBOX=y
 BR2_BUSYBOX_VERSION_1_19_X=y
 # BR2_PACKAGE_BUSYBOX_SNAPSHOT is not set
 BR2_BUSYBOX_VERSION="1.19.4"
-BR2_PACKAGE_BUSYBOX_CONFIG="package/busybox/busybox-1.19.x.config"
+BR2_PACKAGE_BUSYBOX_CONFIG="package/busybox/busybox-1.19.x.cortexm.config"
 # BR2_PACKAGE_BUSYBOX_SHOW_OTHERS is not set
 
 #

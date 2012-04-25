@@ -850,4 +850,3 @@ config BR2_GCC_TARGET_CPU
 	default sparchfleonv8	if BR2_sparc_sparchfleonv8
 	default sparcsfleon	if BR2_sparc_sparcsfleon
 	default sparcsfleonv8	if BR2_sparc_sparcsfleonv8
-	default cortex-m4	if BR_arm_cortexm
