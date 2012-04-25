@@ -37,10 +37,15 @@ LINUX_DEPENDENCIES  += host-module-init-tools
 LINUX_MAKE_FLAGS = \
 	HOSTCC="$(HOSTCC)" \
 	HOSTCFLAGS="$(HOSTCFLAGS)" \
+	EXTRA_CFLAGS="-mno-unaligned-access" \
 	ARCH=$(KERNEL_ARCH) \
 	INSTALL_MOD_PATH=$(TARGET_DIR) \
-	CROSS_COMPILE="$(CCACHE) $(TARGET_CROSS)" \
+	CROSS_COMPILE="$(CCACHE) /opt/arm-2011.03/bin/arm-uclinuxeabi-" \
 	DEPMOD=$(HOST_DIR)/usr/sbin/depmod
+
+#LINHNV1
+#/opt/arm-2011.03/bin/arm-uclinuxeabi-
+#$(TARGET_CROSS)
 
 # Get the real Linux version, which tells us where kernel modules are
 # going to be installed in the target filesystem.

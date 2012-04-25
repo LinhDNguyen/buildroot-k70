@@ -37,8 +37,12 @@ UBOOT_ARCH=$(KERNEL_ARCH)
 
 UBOOT_CONFIGURE_OPTS += CONFIG_NOSOFTFLOAT=1
 UBOOT_MAKE_OPTS += \
-	CROSS_COMPILE="$(CCACHE) $(TARGET_CROSS)" \
+	CROSS_COMPILE="$(CCACHE) /opt/arm-2011.03/bin/arm-uclinuxeabi-" \
 	ARCH=$(UBOOT_ARCH)
+
+#LINHNV1
+#/opt/arm-2011.03/bin/arm-uclinuxeabi-
+#$(TARGET_CROSS)
 
 # Helper function to fill the U-Boot config.h file.
 # Argument 1: option name
