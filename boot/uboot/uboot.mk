@@ -37,7 +37,7 @@ UBOOT_ARCH=$(KERNEL_ARCH)
 
 UBOOT_CONFIGURE_OPTS += CONFIG_NOSOFTFLOAT=1
 UBOOT_MAKE_OPTS += \
-	CROSS_COMPILE="$(CCACHE) /opt/arm-2011.03/bin/arm-uclinuxeabi-" \
+	CROSS_COMPILE="$(CCACHE) /opt/arm-2010q1/bin/arm-uclinuxeabi-" \
 	ARCH=$(UBOOT_ARCH)
 
 #LINHNV1
