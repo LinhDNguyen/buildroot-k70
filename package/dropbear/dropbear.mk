@@ -8,7 +8,11 @@ DROPBEAR_VERSION = 2012.55
 DROPBEAR_SITE = http://matt.ucc.asn.au/dropbear/releases
 DROPBEAR_TARGET_BINS = dbclient dropbearkey dropbearconvert scp ssh
 DROPBEAR_MAKE =	$(MAKE) MULTI=1 SCPPROGRESS=1 \
-		PROGRAMS="dropbear dbclient dropbearkey dropbearconvert scp"
+		PROGRAMS="dropbear dbclient dropbearkey dropbearconvert scp" \
+		CROSS_COMPILE=arm-uclinuxeabi-
+
+DROPBEAR_CFLAGS="-Izlibincludes -I../zlibincludes"
+DROPBEAR_LDFLAGS=/usr/lib/libz.a
 
 ifeq ($(BR2_PREFER_STATIC_LIB),y)
 DROPBEAR_MAKE += STATIC=1

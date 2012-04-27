@@ -14,7 +14,7 @@ endif
 BUSYBOX_SOURCE = busybox-$(BUSYBOX_VERSION).tar.bz2
 BUSYBOX_BUILD_CONFIG = $(BUSYBOX_DIR)/.config
 # Allows the build system to tweak CFLAGS
-BUSYBOX_MAKE_ENV = $(TARGET_MAKE_ENV) CFLAGS="-march=armv7-m -mthumb $(TARGET_CFLAGS) -I$(LINUX_HEADERS_DIR)/include"
+BUSYBOX_MAKE_ENV = $(TARGET_MAKE_ENV) CFLAGS="-march=armv7-m -mthumb -Wl,-elf2flt=-s -Wl,-elf2flt=16384 $(TARGET_CFLAGS) -I$(LINUX_HEADERS_DIR)/include"
 
 #LINHNV1
 #$(TARGET_CFLAGS) 
@@ -24,7 +24,7 @@ BUSYBOX_MAKE_OPTS = \
 	ARCH=$(KERNEL_ARCH) \
 	PREFIX="$(TARGET_DIR)" \
 	EXTRA_LDFLAGS="$(TARGET_LDFLAGS)" \
-	CROSS_COMPILE="/opt/arm-2011.03/bin/arm-uclinuxeabi-" \
+	CROSS_COMPILE="/opt/arm-2010q1/bin/arm-uclinuxeabi-" \
 	CONFIG_PREFIX="$(TARGET_DIR)" \
 	SKIP_STRIP=y
 

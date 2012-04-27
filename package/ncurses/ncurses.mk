@@ -27,7 +27,7 @@ NCURSES_VERSION = 5.7
 NCURSES_SITE = $(BR2_GNU_MIRROR)/ncurses
 NCURSES_INSTALL_STAGING = YES
 NCURSES_DEPENDENCIES = host-ncurses
-
+CFLAGS += -march=armv7-m -mthumb
 NCURSES_CONF_OPT = \
 	--with-shared \
 	--without-cxx \
@@ -42,12 +42,14 @@ NCURSES_CONF_OPT = \
 	--enable-const \
 	--enable-overwrite \
 	--enable-broken_linker \
-	--disable-static
+	--disable-static \
+	CROSS_COMPILE="arm-uclinuxeabi-"
 
 ifneq ($(BR2_ENABLE_DEBUG),y)
 NCURSES_CONF_OPT += --without-debug
 endif
 
+NCURSES_MAKE_OPT = CROSS_COMPILE="arm-uclinuxeabi-"
 
 define NCURSES_BUILD_CMDS
 	$(MAKE1) -C $(@D) DESTDIR=$(STAGING_DIR)
