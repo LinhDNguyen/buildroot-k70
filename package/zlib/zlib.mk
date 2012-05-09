@@ -27,6 +27,16 @@ define ZLIB_CONFIGURE_CMDS
 		--prefix=/usr \
 	)
 endef
+#define ZLIB_CONFIGURE_CMDS
+#	(cd $(@D); rm -rf config.cache; \
+#		$(TARGET_CONFIGURE_ARGS) \
+#		$(TARGET_CONFIGURE_OPTS) \
+#		CFLAGS="$(TARGET_CFLAGS) $(ZLIB_PIC)" \
+#		./configure \
+#		$(ZLIB_SHARED) \
+#		--prefix=/usr \
+#	)
+#endef
 
 define HOST_ZLIB_CONFIGURE_CMDS
 	(cd $(@D); rm -rf config.cache; \
